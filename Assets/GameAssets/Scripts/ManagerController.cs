@@ -26,6 +26,7 @@ public class ManagerController : MonoBehaviour
         if (other.tag == "Player")
         {
             gameDataValues.tmpScore = 0;
+            SoundManager.instance.PlaySound(SoundClip.Failure);
             Debug.Log("Die!");
         }
     }
