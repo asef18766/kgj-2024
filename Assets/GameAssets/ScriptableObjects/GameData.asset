@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23af61bbc64994deaa507f2557e85e88, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  score: 5
+  score: 0
   tmpScore: 0
   speed: 5
   isWorking: 0
-  employeeUpTime: 0
-  employeeCooldown: 0
+  employeeUpTime: 3
+  employeeCooldown: 3

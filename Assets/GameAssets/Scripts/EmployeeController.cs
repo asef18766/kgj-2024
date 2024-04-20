@@ -53,7 +53,7 @@ public class EmployeeController : MonoBehaviour
 
     void updateUp()
     {
-        
+
     }
 
     void FixedUpdate()

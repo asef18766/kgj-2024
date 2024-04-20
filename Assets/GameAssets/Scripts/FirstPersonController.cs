@@ -39,6 +39,11 @@ public class FirstPersonController : MonoBehaviour
             moveHorizontal = 0;
             moveVertical = 0;
         }
+        if (gameDataValues.isConfused)
+        {
+            moveHorizontal *= -1;
+            moveVertical *= -1;
+        }
 
         // Calculate the movement direction
         moveDirection = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;

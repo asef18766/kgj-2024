@@ -10,4 +10,5 @@ public class GameDataScriptableObject : ScriptableObject
     public bool isWorking;
     public float employeeUpTime;
     public float employeeCooldown;
+    public bool isConfused;
 }
