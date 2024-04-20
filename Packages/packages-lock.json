@@ -135,6 +135,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.urbanfox.ukuaikuai": {
+      "version": "https://github.com/huchi57/uKuaiKuai.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c74264d321057b01acb32e93539fc9665319d843"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
