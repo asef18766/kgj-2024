@@ -54,17 +54,20 @@ namespace GameAssets.Scripts.QTE
                 {
                     if (keyCode == QTEKeyList[0]) // correctly matched
                     {
+                        SoundManager.instance.PlaySound(SoundClip.Hit);
                         QTEObjectsList[0].GetComponent<QTEBtnEffect>().PlayDesAni(true);
                         QTEObjectsList.RemoveAt(0);
                         QTEKeyList.RemoveAt(0);
                     }
                     else
                     {
+                        SoundManager.instance.PlaySound(SoundClip.Miss);
                         foreach (var go in QTEObjectsList)
                             go.GetComponent<QTEBtnEffect>().PlayDesAni(false);
                         QTEObjectsList.Clear();
                         QTEKeyList.Clear();
                         IsQTESuccess(false);
+                        return;
                     }
                 }
 

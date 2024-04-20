@@ -12,14 +12,18 @@ public class EmployeeController : MonoBehaviour
     private void _onQTEResult(bool res)
     {
         Debug.Log($"QTE {res}");
-        StartCoroutine(WaitForAnimation());
+        StartCoroutine(WaitForAnimation(res));
     }
 
-    private IEnumerator WaitForAnimation()
+    private IEnumerator WaitForAnimation(bool res)
     { 
         Debug.Log($"current child cnt {qteController.transform.childCount}");
         yield return new WaitUntil(() => qteController.transform.childCount == 0);
-        gameDataValues.tmpScore += 5;
+        if(res)
+        {
+            gameDataValues.tmpScore += 5;
+            SoundManager.instance.PlaySound(SoundClip.WorkSuccess);
+        }
         gameDataValues.isWorking = false;
         qteController.gameObject.SetActive(false);
     }
@@ -43,6 +47,7 @@ public class EmployeeController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            SoundManager.instance.PlaySound(SoundClip.Help);
             quickTimeEvent();
             Debug.Log("Work!");
         }
