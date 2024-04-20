@@ -7,7 +7,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
-    public GameObject player;
     public TextMeshProUGUI tmpScoreText;
     public TextMeshProUGUI scoreText;
 
@@ -16,6 +15,7 @@ public class GameManager : MonoBehaviour
     {
         gameDataValues.tmpScore = 0;
         gameDataValues.score = 0;
+        gameDataValues.isWorking = false;
     }
 
     // Update is called once per frame
