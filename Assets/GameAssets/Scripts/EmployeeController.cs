@@ -8,7 +8,7 @@ public class EmployeeController : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
     [SerializeField] private QTEController qteController;
-    private bool isUp;
+    public bool isUp;
     private float endTime;
 
     private void _onQTEResult(bool res)
