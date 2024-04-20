@@ -16,10 +16,10 @@ public class EmployeeController : MonoBehaviour
     }
 
     private IEnumerator WaitForAnimation(bool res)
-    { 
+    {
         Debug.Log($"current child cnt {qteController.transform.childCount}");
         yield return new WaitUntil(() => qteController.transform.childCount == 0);
-        if(res)
+        if (res)
         {
             gameDataValues.tmpScore += 5;
             SoundManager.instance.PlaySound(SoundClip.WorkSuccess);
@@ -32,6 +32,14 @@ public class EmployeeController : MonoBehaviour
     void Start()
     {
         qteController.IsQTESuccess = _onQTEResult;
+        if (this.qteController == null)
+        {
+            this.qteController = FindObjectOfType<QTEController>();
+        }
+        if (this.qteController == null)
+        {
+            Debug.LogWarning("QTEController is null");
+        }
     }
 
     // Update is called once per frame
