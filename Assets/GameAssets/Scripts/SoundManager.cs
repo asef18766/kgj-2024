@@ -5,7 +5,12 @@ using UnityEngine;
 
 public enum SoundClip
 {
-    Failure,
+    Hit,
+    Miss,
+    Help,
+    AddScore,
+    WorkSuccess,
+    Catched,
 }
 public class SoundManager : MonoBehaviour
 {
