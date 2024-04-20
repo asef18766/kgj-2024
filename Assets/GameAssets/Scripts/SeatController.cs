@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-public class EmployeeController : MonoBehaviour
+public class SeatController : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
     public GameObject player;
@@ -26,7 +26,9 @@ public class EmployeeController : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            Debug.Log("Work!");
+            gameDataValues.score += gameDataValues.tmpScore;
+            gameDataValues.tmpScore = 0;
+            Debug.Log("Seat!");
         }
     }
 }
