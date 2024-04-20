@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         gameDataValues.tmpScore = 0;
         gameDataValues.score = 0;
         gameDataValues.isWorking = false;
+        gameDataValues.isConfused = false;
     }
 
     // Update is called once per frame
