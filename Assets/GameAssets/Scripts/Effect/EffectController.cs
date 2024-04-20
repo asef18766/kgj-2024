@@ -19,9 +19,10 @@ namespace GameAssets.Scripts.Effect
 
         IEnumerator Chaos(GameObject go)
         {
+            gameDataScriptableObject.isConfused = true;
             yield return new WaitForSeconds(duration);
             Destroy(go);
-
+            gameDataScriptableObject.isConfused = false;
         }
 
         IEnumerator UserSpeedUp(GameObject go)
@@ -49,18 +50,16 @@ namespace GameAssets.Scripts.Effect
         IEnumerator BossSpeedUp(GameObject go)
         {
             Debug.Log("boss speed up");
-            managerData.speed *= 5;
+            managerData.speed *= 2;
             yield return new WaitForSeconds(duration);
             Destroy(go);
-            managerData.speed /= 5;
+            managerData.speed /= 2;
         }
-        private void Update()
+
+        public void AddRandEffect()
         {
-            if (!Input.GetKeyDown(KeyCode.L)) return;
             var go = Instantiate(hudSample, transform);
-            //var idx = (int) Random.Range(0, hudUI.Keys.Count);
-            var idx = 0;
-            Debug.Log($"current idx:{idx}");
+            var idx = (int) Random.Range(0, hudUI.Keys.Count);
             var effect = hudUI.Keys.ToList()[idx];
             go.GetComponent<Image>().sprite = hudUI[effect];
             StartCoroutine(effect, go);

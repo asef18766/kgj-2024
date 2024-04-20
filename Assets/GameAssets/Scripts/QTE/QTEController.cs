@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
+using GameAssets.Scripts.Effect;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -13,6 +14,7 @@ namespace GameAssets.Scripts.QTE
         [SerializedDictionary("keycode", "picture")]
         [SerializeField] private SerializedDictionary<KeyCode, Sprite> keyUI;
         [SerializeField] private GameObject QTEkeyPrefab;
+        [SerializeField] private float effectProb = 0.2f;
         public int BtnCnt;
         
         public Action<bool> IsQTESuccess = null;
@@ -30,7 +32,7 @@ namespace GameAssets.Scripts.QTE
             // randomly generate val
             for (var i = 0; i != keyUI.Count; ++i)
             {
-                var key = keyUI.Keys.ToList()[Random.Range(0, keyUI.Count - 1)];
+                var key = keyUI.Keys.ToList()[Random.Range(0, keyUI.Count)];
                 QTEKeyList.Add(key);
                 var go = Instantiate(QTEkeyPrefab, transform);
                 go.GetComponent<Image>().sprite = keyUI[key];
@@ -72,7 +74,11 @@ namespace GameAssets.Scripts.QTE
                 }
 
             if (QTEKeyList.Count == 0)
-                IsQTESuccess(true);
+            {
+                if (Random.Range(0f, 1f) <= effectProb)
+                    FindObjectOfType<EffectController>().AddRandEffect();
+                IsQTESuccess(true);   
+            }
 
         }
     }
