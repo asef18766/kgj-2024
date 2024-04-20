@@ -8,6 +8,8 @@ public class EmployeeController : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
     [SerializeField] private QTEController qteController;
+    private bool isUp;
+    private float endTime;
 
     private void _onQTEResult(bool res)
     {
@@ -16,10 +18,10 @@ public class EmployeeController : MonoBehaviour
     }
 
     private IEnumerator WaitForAnimation(bool res)
-    { 
+    {
         Debug.Log($"current child cnt {qteController.transform.childCount}");
         yield return new WaitUntil(() => qteController.transform.childCount == 0);
-        if(res)
+        if (res)
         {
             gameDataValues.tmpScore += 5;
             SoundManager.instance.PlaySound(SoundClip.WorkSuccess);
@@ -37,6 +39,21 @@ public class EmployeeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.time > endTime)
+        {
+            if (isUp)
+                endTime = Time.time + gameDataValues.employeeCooldown + UnityEngine.Random.Range(-1, 1);
+            else
+                endTime = Time.time + gameDataValues.employeeUpTime + UnityEngine.Random.Range(-1, 1);
+
+            isUp = !isUp;
+            transform.GetChild(0).gameObject.SetActive(isUp);
+        }
+    }
+
+    void updateUp()
+    {
+        
     }
 
     void FixedUpdate()
@@ -45,7 +62,7 @@ public class EmployeeController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && isUp)
         {
             SoundManager.instance.PlaySound(SoundClip.Help);
             quickTimeEvent();

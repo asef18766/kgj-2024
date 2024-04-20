@@ -1363,14 +1363,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Employee
       objectReference: {fileID: 0}
-    - target: {fileID: 2831548088702949813, guid: 519eab0ae2e7e4b888e95ffe3d1f5727, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 9174992014280598399, guid: 519eab0ae2e7e4b888e95ffe3d1f5727, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9174992014280598399, guid: 519eab0ae2e7e4b888e95ffe3d1f5727, type: 3}
       propertyPath: qteController
       value: 
