@@ -25,6 +25,7 @@ public class SeatController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            SoundManager.instance.PlaySound(SoundClip.AddScore);
             gameDataValues.score += gameDataValues.tmpScore;
             gameDataValues.tmpScore = 0;
             Debug.Log("Seat!");

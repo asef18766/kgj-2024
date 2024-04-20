@@ -177,9 +177,12 @@ MonoBehaviour:
   musicSource: {fileID: 8326785484375738280}
   effectSource: {fileID: 8326785483144575915}
   clips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: eeab8af288058447c8e5d9f1463490bf, type: 3}
+  - {fileID: 8300000, guid: db87a4d3f2cc04b9f947123236e03b20, type: 3}
+  - {fileID: 8300000, guid: 9808a5031ccd84944bf5755536fb23be, type: 3}
+  - {fileID: 8300000, guid: cb8d819b4ece54bba98df38c15ffe8b1, type: 3}
+  - {fileID: 8300000, guid: dbde3f25426a64fe2af5f2a4c0778382, type: 3}
+  - {fileID: 8300000, guid: 09d2b23cc19f541218db8d9e95b61de7, type: 3}
 --- !u!1 &8326785484375738281
 GameObject:
   m_ObjectHideFlags: 0
