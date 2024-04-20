@@ -158,6 +158,7 @@ MonoBehaviour:
   speed: 5
   mouseSensitivity: 2
   jumpHeight: 4
+  gameDataValues: {fileID: 11400000, guid: c00b871b273fe4fb092e196c7df93baa, type: 2}
 --- !u!54 &4309453524223342503
 Rigidbody:
   m_ObjectHideFlags: 0
