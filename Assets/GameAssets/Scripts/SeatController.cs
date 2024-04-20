@@ -21,9 +21,9 @@ public class SeatController : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             SoundManager.instance.PlaySound(SoundClip.AddScore);
             gameDataValues.score += gameDataValues.tmpScore;
