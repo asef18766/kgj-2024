@@ -36,6 +36,14 @@ public class EmployeeController : MonoBehaviour
     void Start()
     {
         qteController.IsQTESuccess = _onQTEResult;
+        if (this.qteController == null)
+        {
+            this.qteController = FindObjectOfType<QTEController>();
+        }
+        if (this.qteController == null)
+        {
+            Debug.LogWarning("QTEController is null");
+        }
         mark = (GameObject)Instantiate(markPrefab, transform.position + new Vector3(0, 1, 0), transform.rotation);
     }
 
