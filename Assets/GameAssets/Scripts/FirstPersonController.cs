@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
 {
-    public float speed = 5.0f;
     public float mouseSensitivity = 2.0f;
     public float jumpHeight = 8.0f;
     private bool isJumping = false;
@@ -82,7 +81,7 @@ public class FirstPersonController : MonoBehaviour
     void FixedUpdate()
     {
         // Move the player
-        rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveDirection * gameDataValues.speed * Time.fixedDeltaTime);
     }
 
     void OnCollisionEnter(Collision collision)
