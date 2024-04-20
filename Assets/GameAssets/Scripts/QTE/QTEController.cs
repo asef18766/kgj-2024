@@ -14,19 +14,19 @@ namespace GameAssets.Scripts.QTE
         [SerializeField] private SerializedDictionary<KeyCode, Sprite> keyUI;
         [SerializeField] private GameObject QTEkeyPrefab;
         public int BtnCnt;
+        
         public Action<bool> IsQTESuccess = null;
         
         private List<KeyCode> QTEKeyList = new();
         private List<GameObject> QTEObjectsList = new();
         private List<KeyCode> keyWhiteList;
-        
+
+        private void Start()
+        {
+            keyWhiteList = keyUI.Keys.ToList();
+        }
         private void OnEnable()
         {
-            IsQTESuccess = b =>
-            {
-                Debug.Log($"qte success {b}");
-            };
-            keyWhiteList = keyUI.Keys.ToList();
             // randomly generate val
             for (var i = 0; i != keyUI.Count; ++i)
             {
@@ -40,12 +40,15 @@ namespace GameAssets.Scripts.QTE
 
         private void OnDisable()
         {
+            Debug.Log("clean all");
             QTEObjectsList.Clear();
             QTEKeyList.Clear();
         }
         
         private void Update()
         {
+            if (QTEKeyList.Count == 0) return;
+            
             foreach (var keyCode in keyWhiteList)
                 if (Input.GetKeyDown(keyCode))
                 {
@@ -57,14 +60,17 @@ namespace GameAssets.Scripts.QTE
                     }
                     else
                     {
-                        IsQTESuccess(false);
                         foreach (var go in QTEObjectsList)
                             go.GetComponent<QTEBtnEffect>().PlayDesAni(false);
+                        QTEObjectsList.Clear();
+                        QTEKeyList.Clear();
+                        IsQTESuccess(false);
                     }
                 }
 
             if (QTEKeyList.Count == 0)
                 IsQTESuccess(true);
+
         }
     }
 }

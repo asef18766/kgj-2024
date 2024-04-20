@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+        if (gameDataValues.isWorking)
+        {
+            horizontalInput = 0;
+            verticalInput = 0;
+        }
 
         rb.velocity = new Vector3(gameDataValues.speed * horizontalInput, 0, gameDataValues.speed * verticalInput);
     }
