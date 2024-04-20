@@ -9,7 +9,6 @@ public class FirstPersonController : MonoBehaviour
     public float jumpHeight = 8.0f;
     private bool isJumping = false;
     private Vector3 moveDirection = Vector3.zero;
-    public GameDataScriptableObject gameDataValues;
 
     private Rigidbody rb;
     private Camera cam;
@@ -34,11 +33,6 @@ public class FirstPersonController : MonoBehaviour
         // Get the horizontal and vertical movement input (WASD by default)
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        if (gameDataValues.isWorking)
-        {
-            moveHorizontal = 0;
-            moveVertical = 0;
-        }
 
         // Calculate the movement direction
         moveDirection = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
