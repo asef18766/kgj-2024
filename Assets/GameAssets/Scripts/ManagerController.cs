@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-public class EmployeeController : MonoBehaviour
+public class ManagerController : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
     public GameObject player;
@@ -26,13 +26,8 @@ public class EmployeeController : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            quickTimeEvent();
-            Debug.Log("Work!");
+            gameDataValues.tmpScore = 0;
+            Debug.Log("Die!");
         }
-    }
-
-    void quickTimeEvent()
-    {
-        gameDataValues.tmpScore += 5;
     }
 }
