@@ -9,6 +9,8 @@ public class EmployeeController : MonoBehaviour
     public GameDataScriptableObject gameDataValues;
     [SerializeField] private QTEController qteController;
     public bool isUp;
+    public GameObject markPrefab;
+    private GameObject mark;
     private float endTime;
 
     private void _onQTEResult(bool res)
@@ -34,6 +36,7 @@ public class EmployeeController : MonoBehaviour
     void Start()
     {
         qteController.IsQTESuccess = _onQTEResult;
+        mark = (GameObject)Instantiate(markPrefab, transform.position + new Vector3(0, 1, 0), transform.rotation);
     }
 
     // Update is called once per frame
@@ -47,7 +50,7 @@ public class EmployeeController : MonoBehaviour
                 endTime = Time.time + gameDataValues.employeeUpTime + UnityEngine.Random.Range(-1, 1);
 
             isUp = !isUp;
-            transform.GetChild(0).gameObject.SetActive(isUp);
+            mark.SetActive(isUp);
         }
     }
 
