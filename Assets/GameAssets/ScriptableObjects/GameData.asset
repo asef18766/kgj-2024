@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   tmpScore: 0
-  speed: 5
+  speed: 4
+  isWorking: 0
+  employeeUpTime: 3
+  employeeCooldown: 3
+  isConfused: 0

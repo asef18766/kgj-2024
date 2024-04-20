@@ -8,6 +8,10 @@ public class EmployeeController : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
     [SerializeField] private QTEController qteController;
+    public bool isUp;
+    public GameObject markPrefab;
+    private GameObject mark;
+    private float endTime;
 
     private void _onQTEResult(bool res)
     {
@@ -40,11 +44,27 @@ public class EmployeeController : MonoBehaviour
         {
             Debug.LogWarning("QTEController is null");
         }
+        mark = (GameObject)Instantiate(markPrefab, transform.position + new Vector3(0, 1, 0), transform.rotation);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Time.time > endTime)
+        {
+            if (isUp)
+                endTime = Time.time + gameDataValues.employeeCooldown + UnityEngine.Random.Range(-1, 1);
+            else
+                endTime = Time.time + gameDataValues.employeeUpTime + UnityEngine.Random.Range(-1, 1);
+
+            isUp = !isUp;
+            mark.SetActive(isUp);
+        }
+    }
+
+    void updateUp()
+    {
+
     }
 
     void FixedUpdate()
@@ -53,7 +73,7 @@ public class EmployeeController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && isUp)
         {
             SoundManager.instance.PlaySound(SoundClip.Help);
             quickTimeEvent();
