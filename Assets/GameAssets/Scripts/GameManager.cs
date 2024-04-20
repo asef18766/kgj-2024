@@ -7,7 +7,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
-    public GameObject player;
     public TextMeshProUGUI tmpScoreText;
     public TextMeshProUGUI scoreText;
 

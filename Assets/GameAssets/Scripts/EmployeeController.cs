@@ -6,7 +6,6 @@ using UnityEngine;
 public class EmployeeController : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
-    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,7 @@ public class EmployeeController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.tag == "Player")
         {
             quickTimeEvent();
             Debug.Log("Work!");
