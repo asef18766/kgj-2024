@@ -45,6 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDataValues: {fileID: 11400000, guid: c00b871b273fe4fb092e196c7df93baa, type: 2}
-  player: {fileID: 0}
-  tmpScoreText: {fileID: 0}
-  scoreText: {fileID: 0}
+  managerData: {fileID: 11400000, guid: d565cf8b0560d144585da65cd1ea0f31, type: 2}

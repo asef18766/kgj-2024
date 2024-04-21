@@ -8,7 +8,6 @@ using GameAssets.Scripts.QTE;
 public class GameManager : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
-
     public ManagerData managerData;
     private UIController uiController;
     private int prevScore;
