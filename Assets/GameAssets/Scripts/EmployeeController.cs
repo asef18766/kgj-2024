@@ -9,9 +9,12 @@ public class EmployeeController : MonoBehaviour
     public GameDataScriptableObject gameDataValues;
     public ManagerData managerData;
     [SerializeField] private QTEController qteController;
+
     public bool isUp;
     public GameObject markPrefab;
+    public Transform employeeModel;
     public float markDistance;
+
     private GameObject mark;
     private float endTime;
     private bool isHelped = false;
@@ -65,7 +68,6 @@ public class EmployeeController : MonoBehaviour
                 endTime = Time.time + gameDataValues.employeeCooldown + UnityEngine.Random.Range(-1, 1);
             else
                 endTime = Time.time + gameDataValues.employeeUpTime + UnityEngine.Random.Range(-1, 1);
-
             isUp = !isUp;
             mark.SetActive(isUp);
         }
