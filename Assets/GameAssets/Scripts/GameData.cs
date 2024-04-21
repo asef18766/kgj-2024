@@ -8,6 +8,7 @@ public class GameDataScriptableObject : ScriptableObject
     public int score;
     public int tmpScore;
     public int speed;
+    public float speedMultiplier;
     public bool isWorking;
     public float employeeUpTime;
     public float employeeCooldown;

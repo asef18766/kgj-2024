@@ -8,4 +8,5 @@ public class ManagerData : ScriptableObject
     public float originalSpeed;
     public float speed;
     public float speedIncrease;
+    public float speedMultiplier;
 }

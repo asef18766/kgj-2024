@@ -15,6 +15,7 @@ MonoBehaviour:
   score: 0
   tmpScore: 0
   speed: 4
+  speedMultiplier: 1
   isWorking: 0
   employeeUpTime: 3
   employeeCooldown: 3
