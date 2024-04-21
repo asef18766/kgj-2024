@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23af61bbc64994deaa507f2557e85e88, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  score: 0
+  score: 20000
   tmpScore: 0
   speed: 4
   speedMultiplier: 1
