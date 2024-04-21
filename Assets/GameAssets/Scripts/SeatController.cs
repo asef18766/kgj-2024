@@ -26,8 +26,7 @@ public class SeatController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             SoundManager.instance.PlaySound(SoundClip.AddScore);
-            gameDataValues.score += gameDataValues.tmpScore;
-            gameDataValues.tmpScore = 0;
+            gameDataValues.RefreshScore();
             Debug.Log("Seat!");
         }
     }
