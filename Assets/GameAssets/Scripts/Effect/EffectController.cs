@@ -27,33 +27,33 @@ namespace GameAssets.Scripts.Effect
 
         IEnumerator UserSpeedUp(GameObject go)
         {
-            gameDataScriptableObject.speed *= 2;
+            gameDataScriptableObject.speedMultiplier *= 2;
             yield return new WaitForSeconds(duration);
             Destroy(go);
-            gameDataScriptableObject.speed /= 2;
+            gameDataScriptableObject.speedMultiplier /= 2;
         }
         
         IEnumerator UserSpeedDown(GameObject go)
         {
-            gameDataScriptableObject.speed /= 2;
+            gameDataScriptableObject.speedMultiplier /= 2;
             yield return new WaitForSeconds(duration);
             Destroy(go);
-            gameDataScriptableObject.speed *= 2;
+            gameDataScriptableObject.speedMultiplier *= 2;
         }
         IEnumerator BossSpeedDown(GameObject go)
         {
-            managerData.speed /= 2;
+            managerData.speedMultiplier /= 2;
             yield return new WaitForSeconds(duration);
             Destroy(go);
-            managerData.speed *= 2;
+            managerData.speedMultiplier *= 2;
         }
         IEnumerator BossSpeedUp(GameObject go)
         {
             Debug.Log("boss speed up");
-            managerData.speed *= 2;
+            managerData.speedMultiplier *= 2;
             yield return new WaitForSeconds(duration);
             Destroy(go);
-            managerData.speed /= 2;
+            managerData.speedMultiplier /= 2;
         }
 
         public void AddRandEffect()

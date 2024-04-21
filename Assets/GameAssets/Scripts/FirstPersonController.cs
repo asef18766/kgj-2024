@@ -81,7 +81,7 @@ public class FirstPersonController : MonoBehaviour
     void FixedUpdate()
     {
         // Move the player
-        rb.MovePosition(rb.position + moveDirection * gameDataValues.speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveDirection * gameDataValues.speed * gameDataValues.speedMultiplier * Time.fixedDeltaTime);
     }
 
     void OnCollisionEnter(Collision collision)

@@ -148,9 +148,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDataValues: {fileID: 11400000, guid: c00b871b273fe4fb092e196c7df93baa, type: 2}
+  managerData: {fileID: 11400000, guid: d565cf8b0560d144585da65cd1ea0f31, type: 2}
   qteController: {fileID: 0}
   isUp: 0
-  markPrefab: {fileID: 0}
+  markPrefab: {fileID: 3642231711386165043, guid: ed3d46e032a79485dbab13a5debda7af, type: 3}
 --- !u!65 &6330360165320546252
 BoxCollider:
   m_ObjectHideFlags: 0

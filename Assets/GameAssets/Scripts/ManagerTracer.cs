@@ -19,7 +19,7 @@ public class ManagerTracer : MonoBehaviour
 
     void Update()
     {
-        this.navMeshAgent.speed = this.managerData.speed;
+        this.navMeshAgent.speed = this.managerData.speed * this.managerData.speedMultiplier;
         this.navMeshAgent.destination = this.navTarget.position;
     }
 }
