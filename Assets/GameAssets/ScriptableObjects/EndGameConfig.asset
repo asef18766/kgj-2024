@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5747b3415fee467c98d79a5538b72c78, type: 3}
   m_Name: EndGameConfig
   m_EditorClassIdentifier: 
-  goodEndVal: 5000
+  goodEndVal: 100
