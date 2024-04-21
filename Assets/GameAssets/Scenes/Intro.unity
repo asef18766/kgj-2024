@@ -574,7 +574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kuso Game Jam
+  m_text: Pigu's Life
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca247a3092b7b404dbaa6f4ab43e450c, type: 2}
   m_sharedMaterial: {fileID: -403277894513911722, guid: ca247a3092b7b404dbaa6f4ab43e450c, type: 2}
@@ -829,6 +829,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567953424}
   m_CullTransparentMesh: 1
+--- !u!1001 &1594817686
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.118308
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.2774806
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.689138
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467776, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785483471467806, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_Name
+      value: Sound Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326785484375738280, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 75f953d8ff1140d468741127c164a28e, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b82f9530593a747619fbbfb9b80a9673, type: 3}
 --- !u!114 &729724588663707568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,8 +1086,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8363387879507451444}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: GameScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1133,3 +1194,4 @@ SceneRoots:
   - {fileID: 247342363}
   - {fileID: 1450877983}
   - {fileID: 1151634688}
+  - {fileID: 1594817686}
