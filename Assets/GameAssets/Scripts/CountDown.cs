@@ -14,6 +14,7 @@ namespace GameAssets.Scripts
                 yield return new WaitForSeconds(1);
                 remainTime -= 1;
             }
+            Cursor.lockState = CursorLockMode.None;
             UnityEngine.SceneManagement.SceneManager.LoadScene("End");
         }
 
