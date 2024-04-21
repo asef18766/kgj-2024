@@ -7,6 +7,7 @@ using UnityEngine;
 public class EmployeeController : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
+    public ManagerData managerData;
     [SerializeField] private QTEController qteController;
     public bool isUp;
     public GameObject markPrefab;
@@ -25,8 +26,12 @@ public class EmployeeController : MonoBehaviour
         yield return new WaitUntil(() => qteController.transform.childCount == 0);
         if (res)
         {
-            gameDataValues.tmpScore += 5;
+            gameDataValues.tmpScore += gameDataValues.scoreIncrease;
+            gameDataValues.scoreIncrease = (int)(gameDataValues.scoreIncrease * gameDataValues.scoreMultiplier);
             SoundManager.instance.PlaySound(SoundClip.WorkSuccess);
+            managerData.speed *= managerData.speedIncrease;
+            qteController.BtnCnt += 1;
+            Debug.Log(qteController.BtnCnt);
         }
         gameDataValues.isWorking = false;
         qteController.gameObject.SetActive(false);
@@ -38,7 +43,7 @@ public class EmployeeController : MonoBehaviour
         qteController.IsQTESuccess = _onQTEResult;
         if (this.qteController == null)
         {
-            this.qteController = FindObjectOfType<QTEController>();
+            this.qteController = FindObjectOfType<QTEController>(true);
         }
         if (this.qteController == null)
         {

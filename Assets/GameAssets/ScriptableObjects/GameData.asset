@@ -19,3 +19,8 @@ MonoBehaviour:
   employeeUpTime: 3
   employeeCooldown: 3
   isConfused: 0
+  originalScoreIncrease: 5
+  scoreIncrease: 5
+  scoreMultiplier: 1.5
+  btnCnt: 3
+  managerData: {fileID: 11400000, guid: d565cf8b0560d144585da65cd1ea0f31, type: 2}

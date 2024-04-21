@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using GameAssets.Scripts.QTE;
 public class ManagerController : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
@@ -25,9 +26,9 @@ public class ManagerController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            gameDataValues.tmpScore = 0;
             SoundManager.instance.PlaySound(SoundClip.Catched);
             Debug.Log("Die!");
+            gameDataValues.catchedReset();
         }
     }
 }

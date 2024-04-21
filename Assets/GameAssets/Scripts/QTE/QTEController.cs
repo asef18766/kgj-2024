@@ -30,7 +30,7 @@ namespace GameAssets.Scripts.QTE
         private void OnEnable()
         {
             // randomly generate val
-            for (var i = 0; i != keyUI.Count; ++i)
+            for (var i = 0; i != BtnCnt; ++i)
             {
                 var key = keyUI.Keys.ToList()[Random.Range(0, keyUI.Count)];
                 QTEKeyList.Add(key);
@@ -76,7 +76,7 @@ namespace GameAssets.Scripts.QTE
             if (QTEKeyList.Count == 0)
             {
                 if (Random.Range(0f, 1f) <= effectProb)
-                    FindObjectOfType<EffectController>().AddRandEffect();
+                    FindObjectOfType<EffectController>(true).AddRandEffect();
                 IsQTESuccess(true);   
             }
 
