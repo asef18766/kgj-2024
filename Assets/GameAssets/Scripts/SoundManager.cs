@@ -21,11 +21,13 @@ public class SoundManager : MonoBehaviour
     void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(this.gameObject); // This will make the SoundManager instance persistent
+        }
         else
         {
-            Destroy(this);
-            return;
+            Destroy(this.gameObject);
         }
     }
 
