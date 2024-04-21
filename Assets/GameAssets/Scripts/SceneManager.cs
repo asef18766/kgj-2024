@@ -19,6 +19,7 @@ public class SceneManager : MonoBehaviour
     public void IntroScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
+        SoundManager.instance.ChangeMusic(7);
     }
 
     // switch to game scene

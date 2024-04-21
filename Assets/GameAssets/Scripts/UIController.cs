@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
     public GameObject starPrefab; // Assign your Star prefab here in the Inspector
     public RectTransform startPosObject; // Assign StartPoint GameObject here
     public RectTransform endPosObject; // Assign EndPoint GameObject here
-    public float journeyTime = 5f; // Duration of the movement
+    private float journeyTime = 0.5f; // Duration of the movement
     public float sliderLerpTime = 1f; // Duration of the movement
 
     // Update is called once per frame

@@ -1598,6 +1598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af246c65d89199742b2695d476db555e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  credits: {fileID: 0}
+  how2play: {fileID: 0}
 --- !u!1001 &324633215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3140,7 +3142,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 309422205}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: GameScene
+        m_MethodName: IntroScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4863,7 +4865,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 309422205}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: IntroScene
+        m_MethodName: GameScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

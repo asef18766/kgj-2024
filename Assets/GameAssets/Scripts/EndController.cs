@@ -16,6 +16,17 @@ namespace GameAssets.Scripts
         private void Start()
         {
             GetComponent<Animator>().SetInteger(EndNum, userdata.score >= cfg.goodEndVal ? 1 : 2);
+
+            //change the music based on the score
+            if (userdata.score >= cfg.goodEndVal)
+            {
+                SoundManager.instance.ChangeMusic(9);
+            }
+            else
+            {
+                SoundManager.instance.ChangeMusic(8);
+            }
+
         }
 
         public void DisplayScore()
