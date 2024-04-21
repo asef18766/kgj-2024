@@ -257,7 +257,8 @@ MonoBehaviour:
   gameDataValues: {fileID: 11400000, guid: c00b871b273fe4fb092e196c7df93baa, type: 2}
   qteController: {fileID: 772285395}
   isUp: 0
-  markPrefab: {fileID: 0}
+  markPrefab: {fileID: 3642231711386165043, guid: ed3d46e032a79485dbab13a5debda7af, type: 3}
+  markDistance: 2.5
 --- !u!1001 &729912755
 PrefabInstance:
   m_ObjectHideFlags: 0
