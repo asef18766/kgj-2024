@@ -14,6 +14,7 @@ public class EmployeeController : MonoBehaviour
     public float markDistance;
     private GameObject mark;
     private float endTime;
+    private bool isHelped = false;
 
     private void _onQTEResult(bool res)
     {
@@ -35,7 +36,9 @@ public class EmployeeController : MonoBehaviour
             Debug.Log(qteController.BtnCnt);
         }
         gameDataValues.isWorking = false;
+        isHelped = false;
         qteController.gameObject.SetActive(false);
+        endTime = 0;
     }
 
     // Start is called before the first frame update
@@ -56,7 +59,7 @@ public class EmployeeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > endTime)
+        if (Time.time > endTime && !isHelped)
         {
             if (isUp)
                 endTime = Time.time + gameDataValues.employeeCooldown + UnityEngine.Random.Range(-1, 1);
@@ -93,5 +96,6 @@ public class EmployeeController : MonoBehaviour
             return;
         gameDataValues.isWorking = true;
         qteController.gameObject.SetActive(true);
+        isHelped = true;
     }
 }
