@@ -14,11 +14,13 @@ public class SceneManager : MonoBehaviour
     public void IntroScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
+
     }
 
     //swtitch to game scene
     public void GameScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        SoundManager.instance.ChangeMusic(6);
     }
 }

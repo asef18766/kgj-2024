@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
     [SerializeField] private AudioSource musicSource, effectSource;
-    [SerializeField] private AudioClip[] clips = new AudioClip[3];
+    [SerializeField] private AudioClip[] clips = new AudioClip[9];
 
     void Awake()
     {
@@ -43,4 +43,15 @@ public class SoundManager : MonoBehaviour
     public void ChangeMusicVolume(float value){
         musicSource.GetComponent<AudioSource>().volume=value;
     }
+
+    //change music to a clip in AudioClip[]
+    public void ChangeMusic(int index)
+    {
+        var _musicSource = musicSource.GetComponent<AudioSource>();
+        _musicSource.clip = clips[index];
+        _musicSource.Play();
+        Debug.Log("Music changed to " + clips[index].name);
+    }
+
+
 }
