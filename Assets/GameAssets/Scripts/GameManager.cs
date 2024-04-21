@@ -8,25 +8,24 @@ using GameAssets.Scripts.QTE;
 public class GameManager : MonoBehaviour
 {
     public GameDataScriptableObject gameDataValues;
-    
     public ManagerData managerData;
-    public TextMeshProUGUI tmpScoreText;
-    public TextMeshProUGUI scoreText;
+    private UIController uiController;
+    private int prevScore;
 
-    // Start is called before the first frame update
     void Start()
     {
-        gameDataValues.reset();
+        this.gameDataValues.reset();
+        this.uiController = FindObjectOfType<UIController>();
+        this.prevScore = this.gameDataValues.score;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        tmpScoreText.text = "Score carrying: " + gameDataValues.tmpScore.ToString();
-        scoreText.text = "Score: " + gameDataValues.score.ToString();
-    }
-
-    void FixedUpdate()
-    {
+        this.uiController.SetCarryingScore(this.gameDataValues.tmpScore);
+        if (this.gameDataValues.score != this.prevScore)
+        {
+            this.uiController.AddValueToSlider(this.gameDataValues.score - this.prevScore);
+        }
+        this.prevScore = this.gameDataValues.score;
     }
 }
