@@ -27,6 +27,8 @@ public class SoundManager : MonoBehaviour
             Destroy(this);
             return;
         }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void PlaySound(AudioClip clip)
